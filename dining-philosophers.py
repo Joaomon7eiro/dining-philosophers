@@ -7,10 +7,19 @@ def dining_philosophers():
 
     forks = [Semaphore() for i in range(5)]
 
-    philosophers = [Philosopher(philosophers_names[i], forks[i], forks[(i + 1) % 5], 2, False)
+    philosophers = [Philosopher(philosophers_names[i], forks[i], forks[(i + 1) % 5], 2)
                     for i in range(5)]
 
     for philosopher in philosophers:
         philosopher.start()
 
-dining_philosophers()
+    time.sleep(35)
+
+    return Philosopher.actions
+
+def main():
+    actions = dining_philosophers()
+
+    print(actions)
+
+main()
