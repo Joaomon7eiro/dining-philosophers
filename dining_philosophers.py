@@ -19,7 +19,8 @@ def dining_philosophers():
 
 def main():
     actions = dining_philosophers()
+    return actions
 
-    print(actions)
+if __name__ == '__main__':
 
-main()
+    main()
