@@ -2,24 +2,27 @@ from threading import Semaphore
 import time
 from Philosopher import Philosopher
 
+
 def dining_philosophers():
-    philosophers_names = ('Filosofo 1','Filosofo 2','Filosofo 3','Filosofo 4','Filosofo 5')
+    philosophers_names = ('platao', 'socrates', 'aristoteles', 'nietzsche', 'kant')
 
     forks = [Semaphore() for i in range(5)]
 
-    philosophers = [Philosopher(philosophers_names[i], forks[i], forks[(i + 1) % 5], 2)
+    philosophers = [Philosopher(philosophers_names[i], forks[i], forks[(i + 1) % 5], 2, i)
                     for i in range(5)]
 
     for philosopher in philosophers:
         philosopher.start()
 
-    time.sleep(35)
+    time.sleep(12)
 
     return Philosopher.actions
+
 
 def main():
     actions = dining_philosophers()
     return actions
+
 
 if __name__ == '__main__':
 

@@ -1,0 +1,80 @@
+.container-fluid {
+
+    background-image: url('dining-philosopher.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    height:1050px;
+    width:600px;
+    background-position: center;
+    color : #00f;
+}
+
+.philosopher0 {
+    display : flex;
+    justify-content : center;
+
+}
+
+.philosopher1-2{
+    display : flex;
+    justify-content : center;
+    margin-top : 120px;
+}
+
+.philosopher3-4 {
+    display : flex;
+    justify-content : center;
+    margin-top : 300px;
+}
+
+.full-food {
+    display:flex;
+    background-image: url('food.png');
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    width: 400px;
+}
+
+.half-food {
+    display:flex;
+    background-image: url('half-food.png');
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    width: 400px;
+}
+
+.no-food {
+    display:flex;
+    background-image: url('no-food.png');
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+    height: 150px;
+    width: 400px;
+}
+
+.img-food {
+    width: 150px;
+    height: 150px;
+}
+
+.p0 {
+    padding-top: 70px;
+    padding-left: 284px;
+    width: 700px;
+}
+
+.p1 {
+    margin-right: 300px;
+    margin-left: 30px;
+}
+.p2 {
+    margin-left: 330px;
+}
+.p3 {
+
+}
+.p4 {
+
+}

@@ -5,31 +5,31 @@ class Philosopher(Thread):
 
     actions = []
 
-    def __init__(self, name, left_fork, right_fork, food):
+    def __init__(self, name, left_fork, right_fork, food, identifier):
         Thread.__init__(self)
         self.name = name
         self.left_fork = left_fork
         self.right_fork = right_fork
         self.food = food
+        self.identifier = identifier
 
     def run(self):
 
         while True:
             if self.food == 0:
-                self.actions.append("{} terminou".format(self.name))
+                self.actions.append("{}-finished-{}".format(self.identifier, self.food))
                 break
 
             self.think()
-            self.actions.append("{} fome".format(self.name))
+            self.actions.append("{}-hungry-{}".format(self.identifier, self.food))
             print("{} está com fome".format(self.name))
 
             self.try_eat()
 
-
     def think(self):
-        self.actions.append("{} pensando".format(self.name))
-        print("{} está pensando".format(self.name))
-        time.sleep(3)
+        self.actions.append("{}-thinking-{}".format(self.identifier, self.food))
+        print("{} esta pensando".format(self.name))
+        time.sleep(1)
         return
 
     def try_eat(self):
@@ -47,7 +47,7 @@ class Philosopher(Thread):
 
     def eating(self):
         print("{} começou a comer".format(self.name))
-        self.actions.append("{} comendo".format(self.name))
-        time.sleep(3)
+        self.actions.append("{}-eating-{}".format(self.identifier, self.food))
+        time.sleep(1)
         self.food -= 1
         print("{} terminou de comer, prato tem {} comida".format(self.name, self.food))
