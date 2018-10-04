@@ -1,12 +1,13 @@
-from threading import Thread
+import threading as thr
 import time
 
-class Philosopher(Thread):
+
+class Philosopher(thr.Thread):
 
     actions = []
 
     def __init__(self, name, left_fork, right_fork, food, identifier):
-        Thread.__init__(self)
+        thr.Thread.__init__(self)
         self.name = name
         self.left_fork = left_fork
         self.right_fork = right_fork
@@ -42,12 +43,17 @@ class Philosopher(Thread):
             return
 
         self.eating()
+
         self.left_fork.release()
         self.right_fork.release()
 
     def eating(self):
         print("{} começou a comer".format(self.name))
+
         self.actions.append("{}-eating-{}".format(self.identifier, self.food))
-        time.sleep(1)
+        time.sleep(4)
         self.food -= 1
+
+        self.actions.append("{}-eating-{}".format(self.identifier, self.food))
+
         print("{} terminou de comer, prato tem {} comida".format(self.name, self.food))

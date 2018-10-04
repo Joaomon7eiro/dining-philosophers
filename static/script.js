@@ -68,25 +68,37 @@ function startDining(actions){
                     break
             }
 
+            switch(philosopher_action){
+                case 'eating':
+                    philosopher_action = "eating"
+                    break
+                case 'hungry':
+                    philosopher_action = "hungry"
+                    break
+                default:
+                    philosopher_action = philosopher_action
+                    break
+            }
+
             switch(philosopher_id){
                 case '0':
-                    $("#0").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1>platao ${philosopher_action}</h1>`)
+                    $("#0").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">platao ${philosopher_action}</h1>`)
                     break
                 case '1':
-                    $("#1").html(`<h1>socrates ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
+                    $("#1").html(`<h1 class="${philosopher_action}">socrates ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
                     break
                 case '2':
-                    $("#2").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1>aristoteles ${philosopher_action}</h1>`)
+                    $("#2").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">aristoteles ${philosopher_action}</h1>`)
                     break
                 case '3':
-                    $("#3").html(`<h1>nietzsche ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
+                    $("#3").html(`<h1 class="${philosopher_action}">nietzsche ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
                     break
                 case '4':
-                    $("#4").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1>kant ${philosopher_action}</h1>`)
+                    $("#4").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">kant ${philosopher_action}</h1>`)
                     break
 
             }
-          }, 500 * i )
+          }, 1000 * i )
        })(i++)
     }
 
