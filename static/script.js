@@ -16,13 +16,13 @@ function startDining(actions){
         <div class="philosopher1-2">
 
             <div id="1" class="d-flex p1">
-                <h1>socrates</h1>
+                <h1>kant</h1>
                 <img class="img-food" src="../static/css/food.png" />
             </div>
 
             <div id="2" class="d-flex p2">
                 <img class="img-food" src="../static/css/food.png" />
-                <h1>aristoteles</h1>
+                <h1>socrates</h1>
             </div>
 
         </div>
@@ -36,7 +36,7 @@ function startDining(actions){
 
             <div id="4" class="d-flex p4">
                 <img class="img-food" src="../static/css/food.png" />
-                <h1>kant</h1>
+                <h1>aristoteles</h1>
             </div>
 
         </div>
@@ -55,7 +55,7 @@ function startDining(actions){
             philosopher_id = action.split("-")[0]
             philosopher_action = action.split("-")[1]
             philosopher_food = action.split("-")[2]
-
+            philosopher_name = action.split("-")[3]
             switch(philosopher_food){
                 case '2':
                     philosopher_food = "food"
@@ -82,19 +82,19 @@ function startDining(actions){
 
             switch(philosopher_id){
                 case '0':
-                    $("#0").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">platao ${philosopher_action}</h1>`)
+                    $("#0").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">${philosopher_name} ${philosopher_action}</h1>`)
                     break
                 case '1':
-                    $("#1").html(`<h1 class="${philosopher_action}">socrates ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
+                    $("#2").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">${philosopher_name} ${philosopher_action}</h1>`)
                     break
                 case '2':
-                    $("#2").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">aristoteles ${philosopher_action}</h1>`)
+                    $("#4").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">${philosopher_name} ${philosopher_action}</h1>`)
                     break
                 case '3':
-                    $("#3").html(`<h1 class="${philosopher_action}">nietzsche ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
+                    $("#3").html(`<h1 class="${philosopher_action}"> ${philosopher_name} ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
                     break
                 case '4':
-                    $("#4").html(`<img class="img-food" src="../static/css/${philosopher_food}.png" /><h1 class="${philosopher_action}">kant ${philosopher_action}</h1>`)
+                    $("#1").html(`<h1 class="${philosopher_action}">${philosopher_name} ${philosopher_action}</h1><img class="img-food" src="../static/css/${philosopher_food}.png" />`)
                     break
 
             }

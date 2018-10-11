@@ -34,13 +34,13 @@
     display : flex;
     justify-content : center;
     margin-top: 130px;
+    margin-left:50px;
 }
 
 .philosopher3-4 {
     display : flex;
     justify-content : center;
     margin-top: 300px;
-    margin-right: 90px;
 }
 
 
